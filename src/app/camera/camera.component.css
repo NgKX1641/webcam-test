@@ -4,14 +4,14 @@
   justify-content: space-around;
   gap: 20px;
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 /* Common Feed Wrapper for both Original and Zoomed */
 .feed-wrapper {
   position: relative;
-  width: 330px; /* Fixed to the desired video dimensions */
+  min-width: 330px; /* Fixed to the desired video dimensions */
   height: 160px;
-  aspect-ratio: 330/160 !important;
   overflow: hidden; /* Ensures only the cropped area is visible */
   border: 2px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
