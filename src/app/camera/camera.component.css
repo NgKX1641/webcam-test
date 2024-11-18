@@ -1,3 +1,4 @@
+/* Container for both webcam feeds */
 .webcam-container {
   display: flex;
   justify-content: space-around;
@@ -5,6 +6,7 @@
   padding: 10px;
 }
 
+/* Common Feed Wrapper for both Original and Zoomed */
 .feed-wrapper {
   position: relative;
   width: 330px; /* Fixed to the desired video dimensions */
@@ -23,6 +25,7 @@
   object-fit: cover; /* Ensures the video covers the container */
   transform: translate(-50%, -50%);
   width: 200%; /* Increase width to allow zoom */
+  height: 200%;
 }
 
 /* Original Feed */
@@ -36,4 +39,7 @@
 .zoomed-feed .webcam-feed {
   transform: translate(-50%, -50%) scale(2); /* Zoom in */
   object-fit: cover; /* Ensures the zoomed section is centered */
+  width: 200%; /* Enlarge the feed */
+  height: 200%; /* Enlarge the feed */
+  /* This creates the zoom effect by making the video feed larger */
 }

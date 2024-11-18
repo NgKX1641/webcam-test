@@ -23,7 +23,8 @@
             [videoOptions]="videoOptions"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
-            class="webcam-feed zoomed">
+            class="webcam-feed zoomed"
+            [ngStyle]="{ 'transform': 'translate(-50%, -50%) scale(' + zoomLevel + ')' }">
           </webcam>
           <p>Zoomed Feed</p>
         </div>
@@ -32,12 +33,11 @@
     <!-- Overlay for zoomed section -->
     <div class="zoom-overlay"></div>
 </div>
-  
+
 <!-- Captured Image Preview -->
 <div *ngIf="capturedImage" class="captured-image-preview">
-<img [src]="capturedImage" alt="Captured Section" />
+  <img [src]="capturedImage" alt="Captured Section" />
 </div>
 
 <!-- Capture Button -->
 <button (click)="captureImage()">Capture</button>
-
