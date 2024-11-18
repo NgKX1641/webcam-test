@@ -7,7 +7,6 @@
             [width]="videoWidth"
             [height]="videoHeight"
             [videoOptions]="videoOptions"
-            [allowCameraSwitch]="true"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
             class="webcam-feed original">
@@ -22,7 +21,6 @@
             [width]="videoWidth"
             [height]="videoHeight"
             [videoOptions]="videoOptions"
-            [allowCameraSwitch]="true"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
             class="webcam-feed zoomed">
@@ -30,7 +28,7 @@
           <p>Zoomed Feed</p>
         </div>
     </div>
-    
+
     <!-- Overlay for zoomed section -->
     <div class="zoom-overlay"></div>
 </div>
