@@ -1,0 +1,45 @@
+<div class="camera-container">
+    <div class="webcam-container">
+        <!-- Original Feed -->
+        <div class="feed-wrapper original-feed">
+          <webcam
+            [trigger]="triggerObservable"
+            [width]="videoWidth"
+            [height]="videoHeight"
+            [videoOptions]="videoOptions"
+            [allowCameraSwitch]="true"
+            (imageCapture)="onImageCapture($event)"
+            (initError)="handleInitError($event)"
+            class="webcam-feed original">
+          </webcam>
+          <p>Original Feed</p>
+        </div>
+      
+        <!-- Zoomed Feed -->
+        <div class="feed-wrapper zoomed-feed">
+          <webcam
+            [trigger]="triggerObservable"
+            [width]="videoWidth"
+            [height]="videoHeight"
+            [videoOptions]="videoOptions"
+            [allowCameraSwitch]="true"
+            (imageCapture)="onImageCapture($event)"
+            (initError)="handleInitError($event)"
+            class="webcam-feed zoomed">
+          </webcam>
+          <p>Zoomed Feed</p>
+        </div>
+    </div>
+    
+    <!-- Overlay for zoomed section -->
+    <div class="zoom-overlay"></div>
+</div>
+  
+<!-- Captured Image Preview -->
+<div *ngIf="capturedImage" class="captured-image-preview">
+<img [src]="capturedImage" alt="Captured Section" />
+</div>
+
+<!-- Capture Button -->
+<button (click)="captureImage()">Capture</button>
+

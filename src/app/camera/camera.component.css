@@ -1,0 +1,39 @@
+.webcam-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px;
+}
+
+.feed-wrapper {
+  position: relative;
+  width: 330px; /* Fixed to the desired video dimensions */
+  height: 160px;
+  overflow: hidden; /* Ensures only the cropped area is visible */
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Shared Webcam Feed Styles */
+.webcam-feed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover; /* Ensures the video covers the container */
+  transform: translate(-50%, -50%);
+  width: 200%; /* Increase width to allow zoom */
+}
+
+/* Original Feed */
+.original-feed .webcam-feed {
+  transform: translate(-50%, -50%) scale(1); /* No zoom */
+  width: 100%; /* Match container dimensions */
+  height: 100%;
+}
+
+/* Zoomed Feed */
+.zoomed-feed .webcam-feed {
+  transform: translate(-50%, -50%) scale(2); /* Zoom in */
+  object-fit: cover; /* Ensures the zoomed section is centered */
+}
