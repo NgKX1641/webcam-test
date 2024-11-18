@@ -11,7 +11,7 @@
 .feed-wrapper {
   position: relative;
   min-width: 330px; /* Fixed to the desired video dimensions */
-  height: 160px;
+  max-height: 160px;
   overflow: hidden; /* Ensures only the cropped area is visible */
   border: 2px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
