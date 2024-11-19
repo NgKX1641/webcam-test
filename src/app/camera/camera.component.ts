@@ -78,11 +78,6 @@ export class CameraComponent {
   // Optionally, you can change the zoom level based on screen orientation
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.updateZoom();
-  }
-
-  updateZoom() {
-    const isPortrait = window.innerHeight > window.innerWidth;
-    this.zoomLevel = isPortrait ? 2 : 1.5;  // Example: adjust zoom based on orientation
+    this.zoomLevel = 3
   }
 }
