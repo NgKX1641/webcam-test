@@ -55,8 +55,8 @@ export class CameraComponent {
       const zoomFactor = 3; // Matches the CSS scale factor
       const cropWidth = this.videoWidth / zoomFactor;
       const cropHeight = this.videoHeight / zoomFactor;
-      const cropX = (image.width - cropWidth) / zoomFactor; // Center crop
-      const cropY = (image.height - cropHeight) / zoomFactor; // Center crop
+      const cropX = (image.width - cropWidth) / 2; // Center crop
+      const cropY = (image.height - cropHeight) / 2; // Center crop
 
       // Draw the zoomed area onto the canvas
       context.drawImage(

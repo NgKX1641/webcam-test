@@ -25,8 +25,7 @@
             [allowCameraSwitch]="false"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
-            class="webcam-feed zoomed"
-            [ngStyle]="{ 'transform': 'translate(-50%, -50%) scale(' + zoomLevel + ')' }">
+            class="webcam-feed zoomed">
           </webcam>
           <p>Zoomed Feed</p>
         </div>
