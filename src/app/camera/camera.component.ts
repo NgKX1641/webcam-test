@@ -23,9 +23,6 @@ export class CameraComponent {
   // Zoom level (dynamically adjustable)
   public zoomLevel = 2; // Default zoom level
 
-  public nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
-  public currentFacingMode: 'user' | 'environment' = 'user';
-
   // Capture image
   captureImage(): void {
     this.triggerObservable.next();
@@ -87,11 +84,5 @@ export class CameraComponent {
   updateZoom() {
     const isPortrait = window.innerHeight > window.innerWidth;
     this.zoomLevel = isPortrait ? 2 : 1.5;  // Example: adjust zoom based on orientation
-  }
-
-  switchCamera(): void {
-    // Toggle between 'user' and 'environment'
-    this.currentFacingMode = this.currentFacingMode === 'user' ? 'environment' : 'user';
-    this.nextWebcam.next(this.currentFacingMode);
   }
 }
