@@ -7,7 +7,7 @@
             [width]="videoWidth"
             [height]="videoHeight"
             [videoOptions]="videoOptions"
-            [allowCameraSwitch]="false"
+            [allowCameraSwitch]="true"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
             class="webcam-feed original">
@@ -22,7 +22,7 @@
             [width]="videoWidth"
             [height]="videoHeight"
             [videoOptions]="videoOptions"
-            [allowCameraSwitch]="false"
+            [allowCameraSwitch]="true"
             (imageCapture)="onImageCapture($event)"
             (initError)="handleInitError($event)"
             class="webcam-feed zoomed">
