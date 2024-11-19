@@ -21,7 +21,7 @@ export class CameraComponent {
   public zoomedImage: string | null = null; // Cropped image
 
   // Zoom level (dynamically adjustable)
-  public zoomLevel = 2; // Default zoom level
+  public zoomLevel = 3; // Default zoom level
 
   // Capture image
   captureImage(): void {
