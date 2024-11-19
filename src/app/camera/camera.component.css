@@ -38,7 +38,7 @@
 
 /* Zoomed Feed */
 .zoomed-feed .webcam-feed {
-  transform: translate(-50%, -50%) scale(3); /* Zoom effect */
+  transform: translate(-50%, -50%) scale(2); /* Zoom effect */
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure zoomed section is centered */

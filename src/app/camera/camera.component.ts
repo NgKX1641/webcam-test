@@ -16,7 +16,9 @@ export class CameraComponent {
     height: { ideal: this.videoHeight },
   };
 
-  public capturedImage: string | null = null;
+  // Captured images
+  public capturedImage: string | null = null; // Full image
+  public zoomedImage: string | null = null; // Cropped image
 
   // Zoom level (dynamically adjustable)
   public zoomLevel = 2; // Default zoom level
@@ -29,6 +31,43 @@ export class CameraComponent {
   // Handle captured image
   onImageCapture(webcamImage: WebcamImage): void {
     this.capturedImage = webcamImage.imageAsDataUrl;
+
+    // Crop the image to zoomed area
+    this.cropToZoomedArea(webcamImage.imageAsDataUrl);
+  }
+
+  // Crop image to the zoomed area
+  private cropToZoomedArea(imageDataUrl: string): void {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    if (!context) return;
+
+    // Set canvas size to the zoomed dimensions
+    canvas.width = this.videoWidth;
+    canvas.height = this.videoHeight;
+
+    const image = new Image();
+    image.src = imageDataUrl;
+
+    image.onload = () => {
+      // Define cropping area
+      const zoomFactor = 2; // Matches the CSS scale factor
+      const cropWidth = this.videoWidth * zoomFactor;
+      const cropHeight = this.videoHeight * zoomFactor;
+      const cropX = (image.width - cropWidth) / 2; // Center crop
+      const cropY = (image.height - cropHeight) / 2; // Center crop
+
+      // Draw the zoomed area onto the canvas
+      context.drawImage(
+        image,
+        cropX, cropY, cropWidth, cropHeight, // Source dimensions
+        0, 0, this.videoWidth, this.videoHeight // Target dimensions
+      );
+
+      // Get the cropped image as Data URL
+      this.zoomedImage = canvas.toDataURL('image/png');
+    };
   }
 
   // Handle webcam initialization errors
