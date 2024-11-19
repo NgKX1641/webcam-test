@@ -8,12 +8,18 @@ import { WebcamImage, WebcamInitError } from 'ngx-webcam';
   styleUrls: ['./camera.component.css'],
 })
 export class CameraComponent {
+  // Webcam trigger
   public triggerObservable: Subject<void> = new Subject<void>();
+
+  // Camera facing mode
+  public currentFacingMode: 'user' | 'environment' = 'user';
+
   public videoWidth = 330;
   public videoHeight = 160;
   public videoOptions: MediaTrackConstraints = {
     width: { ideal: this.videoWidth },
     height: { ideal: this.videoHeight },
+    facingMode: this.currentFacingMode,
   };
 
   // Captured images
@@ -84,5 +90,14 @@ export class CameraComponent {
   updateZoom() {
     const isPortrait = window.innerHeight > window.innerWidth;
     this.zoomLevel = isPortrait ? 2 : 1.5;  // Example: adjust zoom based on orientation
+  }
+
+  // Flip camera
+  flipCamera(): void {
+    this.currentFacingMode = this.currentFacingMode === 'user' ? 'environment' : 'user';
+    this.videoOptions = {
+      ...this.videoOptions,
+      facingMode: this.currentFacingMode, // Update the facing mode
+    };
   }
 }
