@@ -26,6 +26,6 @@
   left: 50%;
   object-fit: cover; /* Ensure the video fills the container */
   transform: translate(-50%, -50%) scale(2); /* Center the video */
-  width: 100%;
+  width: auto;
   height: 100%;
 }
