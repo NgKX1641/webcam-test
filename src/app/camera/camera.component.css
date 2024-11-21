@@ -10,7 +10,6 @@
 /* Common Feed Wrapper for both Original and Zoomed */
 .feed-wrapper {
   position: relative;
-  width: 100%; /* Make the container responsive */
   width: 330px !important; /* Limit the maximum width */
   height: 160px !important;
   overflow: hidden; /* Ensures only the cropped area is visible */
@@ -26,20 +25,7 @@
   top: 50%;
   left: 50%;
   object-fit: cover; /* Ensure the video fills the container */
-  transform: translate(-50%, -50%); /* Center the video */
+  transform: translate(-50%, -50%) scale(2); /* Center the video */
   width: 100%;
   height: 100%;
-}
-
-/* Original Feed */
-.original-feed .webcam-feed {
-  transform: translate(-50%, -50%) scale(1); /* No zoom effect */
-}
-
-/* Zoomed Feed */
-.zoomed-feed .webcam-feed {
-  transform: translate(-50%, -50%) scale(3); /* Zoom effect */
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure zoomed section is centered */
 }

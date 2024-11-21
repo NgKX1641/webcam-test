@@ -52,7 +52,7 @@ export class CameraComponent {
 
     image.onload = () => {
       // Define cropping area
-      const zoomFactor = 3; // Matches the CSS scale factor
+      const zoomFactor = 2; // Matches the CSS scale factor
       const cropWidth = this.videoWidth / zoomFactor;
       const cropHeight = this.videoHeight / zoomFactor;
       const cropX = (image.width - cropWidth) / 2; // Center crop
