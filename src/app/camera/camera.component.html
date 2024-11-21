@@ -1,46 +1,46 @@
 <div class="camera-container">
-    <div class="webcam-container">
-        <!-- Original Feed -->
-        <div class="feed-wrapper original-feed">
-          <webcam
-            [trigger]="triggerObservable"
-            [width]="videoWidth"
-            [height]="videoHeight"
-            [videoOptions]="videoOptions"
-            [allowCameraSwitch]="true"
-            (imageCapture)="onImageCapture($event)"
-            (initError)="handleInitError($event)"
-            class="webcam-feed original">
-          </webcam>
-          <p>Original Feed</p>
-        </div>
-      
-        <!-- Zoomed Feed -->
-        <div class="feed-wrapper zoomed-feed">
-          <webcam
-            [trigger]="triggerObservable"
-            [width]="videoWidth"
-            [height]="videoHeight"
-            [videoOptions]="videoOptions"
-            [allowCameraSwitch]="true"
-            (imageCapture)="onImageCapture($event)"
-            (initError)="handleInitError($event)"
-            class="webcam-feed zoomed">
-          </webcam>
-          <p>Zoomed Feed</p>
-        </div>
-    </div>
+  <div class="webcam-container">
+      <!-- Original Feed -->
+      <div class="feed-wrapper original-feed">
+        <webcam
+          [trigger]="triggerObservable"
+          [width]="videoWidth"
+          [height]="videoHeight"
+          [videoOptions]="videoOptions"
+          [allowCameraSwitch]="true"
+          (imageCapture)="onImageCapture($event)"
+          (initError)="handleInitError($event)"
+          class="webcam-feed original">
+        </webcam>
+        <p>Original Feed</p>
+      </div>
+    
+      <!-- Zoomed Feed -->
+      <div class="feed-wrapper zoomed-feed">
+        <webcam
+          [trigger]="triggerObservable"
+          [width]="videoWidth"
+          [height]="videoHeight"
+          [videoOptions]="videoOptions"
+          [allowCameraSwitch]="true"
+          (imageCapture)="onImageCapture($event)"
+          (initError)="handleInitError($event)"
+          class="webcam-feed zoomed">
+        </webcam>
+        <p>Zoomed Feed</p>
+      </div>
+  </div>
 </div>
 
 <!-- Captured Images -->
 <div *ngIf="capturedImage" class="captured-image-preview">
-    <h3>Original Captured Image</h3>
-    <img [src]="capturedImage" alt="Captured Image" />
+  <h3>Original Captured Image</h3>
+  <img [src]="capturedImage" alt="Captured Image" />
 </div>
 
 <div *ngIf="zoomedImage" class="captured-image-preview">
-    <h3>Zoomed Captured Image</h3>
-    <img [src]="zoomedImage" alt="Zoomed Captured Image" />
+  <h3>Zoomed Captured Image</h3>
+  <img [src]="zoomedImage" alt="Zoomed Captured Image" />
 </div>
 
 <!-- Capture Button -->
